@@ -1,0 +1,8 @@
+[Expected Approach] One Pass Search
+The idea is to keep track of the largest and second largest element while traversing the array. Initialize largest and secondLargest with -1. Now, for any index i,
+
+If arr[i] > largest, update secondLargest with largest and largest with arr[i].
+Else If arr[i] < largest and arr[i] > secondLargest, update secondLargest with arr[i].
+
+Time Complexity: O(n), as we are traversing the array only once.
+Auxiliary space: O(1)

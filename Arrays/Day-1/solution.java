@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class Solution {
-    static int getSecondLargest(int[] arr) {
+   public static int getSecondLargest(int[] arr) {
         int n = arr.length;
         int largest = -1, secondLargest = -1;
         for (int i = 0; i < n; i++) {

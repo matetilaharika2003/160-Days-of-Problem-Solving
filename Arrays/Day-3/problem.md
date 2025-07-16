@@ -15,6 +15,7 @@ Explanation: The elements of the array are 4 5 2. The reversed array will be 2 5
 Input: arr = [1]
 Output: [1]
 Explanation: The array has only single element, hence the reversed array is same as the original.
+
 Constraints:
 1<=arr.size()<=105
 0<=arr[i]<=105

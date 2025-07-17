@@ -1,0 +1,28 @@
+[Expected Approach] Generating Only Next - O(n) Time and O(1) Space
+Let's try some examples to see if we can recognize some patterns. 
+
+[1, 2, 3, 4, 5]: next is [1, 2, 3, 5, 4]
+Observation: 4 moves and 5 comes in place of it
+
+[1, 2, 3, 5, 4]: next is [1, 2, 4, 3, 5]
+Observation: 3 moves, 4 comes in place of it. 3 comes before 5 (mainly 3 and 5 are in sorted order)
+
+[1, 2, 3, 6, 5, 4]: next is [1, 2, 4, 3, 5, 6]
+Observation: 3 moves, 4 comes in place of it. [3, 5 and 6 are placed in sorted order]
+
+[3, 2, 1]: next is [1, 2, 3]
+Observation: All elements are reverse sorted. Result is whole array sorted.
+
+Observations of Next permutation: 
+
+To get the next permutation we change the number in a position which is as right as possible.
+The first number to be moved is the rightmost number smaller than its next.
+The number to come in-place is the rightmost greater number on right side of the pivot.
+Each permutation (except the very first) has an increasing suffix. Now if we change the pattern from the pivot point (where the increasing suffix breaks) to its next possible lexicographic representation we will get the next greater permutation.
+Step-By-Step Approach:
+
+Iterate over the given array from end and find the first index (pivot) which doesn't follow property of non-increasing suffix, (i.e,  arr[i] < arr[i + 1]).
+If pivot index does not exist, then the given sequence in the array is the largest as possible. So, reverse the complete array. For example, for [3, 2, 1], the output would be [1, 2, 3]
+Otherwise, Iterate the array from the end and find for the successor (rightmost greater element) of pivot in suffix.
+Swap the pivot and successor
+Minimize the suffix part by reversing the array from pivot + 1 till n.
